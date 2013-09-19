@@ -79,8 +79,8 @@ sequence_dictionary.each do |seq_file|
   seq_file[1].chomp!
   if File.exists?(seq_file[1]) && File.file?(seq_file[1])
     #There is a problem sometimes where the "auto" function doesn't recognize RAST genbanks.  You can force it by uncommenting the next line, and commenting out the line after:
-    #seq_FH = Bio::FlatFile.open(Bio::GenBank, seq_file[1])
-    seq_FH = Bio::FlatFile.auto(seq_file[1])
+    seq_FH = Bio::FlatFile.open(Bio::GenBank, seq_file[1])
+    #seq_FH = Bio::FlatFile.auto(seq_file[1])
     full_seq = ""
     seq_FH.each do |seq_entry|
       full_seq << seq_entry.seq
